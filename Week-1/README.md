@@ -63,6 +63,37 @@
 
 ---
 
+#### Parsers (HTML, CSS, etc)
+- A parser in a browser is a piece of software that is responsible for taking the code that makes up a website 
+   (usually written in HTML, CSS, and JavaScript) and turning it into a format that the browser can understand and display to the user. 
+- This typically involves breaking the code down into a tree-like structure and 
+   then interpreting each element according to its specific rules and syntax. 
+- The parser is an essential part of the rendering process in a browser, as it allows the browser to accurately and 
+   efficiently display the content of a website to the user.
+- There are several different types of parsers that might be used in a web browser, 
+   depending on the type of code being processed. For example:
+   - An HTML parser is used to analyze the structure of an HTML document, 
+      and to build a representation of the document in memory that the browser can use to render the page.
+   - A CSS parser is used to analyze the stylesheets associated with a web page, and to apply the styles to the page's content.
+   - A JavaScript parser is used to analyze and execute the JavaScript code on a web page. 
+      This allows the browser to respond to user events, such as clicks or keyboard input, and to update the page dynamically.
+   In addition to these core parsers, a web browser might also use other specialized parsers for handling specific types of content, 
+   such as images, videos, or audio files.
+- Working of parser
+   - When a user requests a web page, the browser sends a request to the web server for the desired page. 
+      The server then responds by sending the HTML code for the page back to the browser.
+   - The browser then uses an HTML parser to analyze the structure of the HTML code and to create a representation of the page in memory. 
+      This representation, sometimes called the "DOM" (Document Object Model), is a tree-like structure that represents the hierarchical 
+      relationship between the different elements on the page.
+   - Once the HTML code has been parsed, the browser uses a CSS parser to analyze any associated stylesheets 
+      and to apply the styles to the page's content. This determines the final layout and appearance of the page.
+   - Finally, the browser uses a JavaScript parser to execute any JavaScript code on the page. 
+      This allows the page to respond to user events, such as clicks or keyboard input, and to update dynamically.
+   - Here is a diagram illustrating this process:
+      ![Working of parser](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_works/rendering.svg)
+      
+---
+
 #### Rendering engine and its use
 
 - Once a user requests a particular document, the rendering engine starts fetching the content of the requested document. 
