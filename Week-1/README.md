@@ -104,3 +104,43 @@
 - The primary job of a browser engine is to transform HTML documents and other resources of a web page into an interactive visual representation on a user's device.
 
 ---
+
+#### Script Processors
+
+- The script processor executes Javascript code to process an event. The processor uses a pure Go implementation of 
+    ECMAScript 5.1 and has no external dependencies. This can be useful in situations where one of the other processors 
+    doesn’t provide the functionality you need to filter events.
+- The processor can be configured by embedding Javascript in your configuration file or by pointing the processor at external file(s).
+   ```   
+      processors:
+        - script:
+            lang: javascript
+            source: >
+                function process(event) {
+                    event.Tag("js");
+                }
+   ```
+
+---
+
+#### Tree Construction
+
+- The input to the tree construction stage is a sequence of tokens from the tokenization stage. 
+    The tree construction stage is associated with a DOM Document object when a parser is created. 
+    The "output" of this stage consists of dynamically modifying or extending that document's DOM tree.
+- This specification does not define when an interactive user agent has to render the Document so that it is available to the user, 
+    or when it has to begin accepting user input.
+- As each token is emitted from the tokenizer, the user agent must follow the appropriate steps from the following list:
+   - If there is no current node
+   - If the current node is an element in the HTML namespace
+   - If the current node is a MathML text integration point and the token is a start tag whose tag name is neither "mglyph" nor "malignmark"
+   - If the current node is an annotation-xml element in the MathML namespace and the token is a start tag whose tag name is "svg"
+   - If the current node is an HTML integration point and the token is a start tag
+   - If the current node is an HTML integration point and the token is a character token
+   - If the token is an end-of-file token  
+      Process the token according to the rules given in the section corresponding to the current insertion mode in HTML content.
+   - Otherwise  
+      Process the token according to the rules given in the section for parsing tokens in foreign content.
+
+---
+
