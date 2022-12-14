@@ -144,3 +144,57 @@
 
 ---
 
+#### Order of script processing
+
+- The order in which scripts are processed by a browser can vary depending on a number of factors, 
+   including the type of script being executed and the way it is included in the page.
+- The order in which scripts are processed by a browser can vary depending on a number of factors, 
+   including the type of script being executed and the way it is included in the page.
+- Generally scripts are processed in the following order:
+   - The browser loads and parses the HTML code for the page, and constructs the DOM (Document Object Model) in memory.
+   - The browser loads and parses any external stylesheets that are included in the page, 
+      and applies the styles to the page's content.
+   - The browser loads and parses any external JavaScript files that are included in the page.
+   - The browser evaluates any inline JavaScript code that is included directly in the HTML code for the page.
+- In general, however, scripts are executed in the order in which they are encountered by the browser's parser. 
+   This means that if multiple scripts are included in the HTML code for a page, 
+      they will be executed in the order in which they appear in the code.
+- For example, consider the following HTML code:
+   ```
+      <html>
+         <head>
+            <script src="script1.js"></script>
+            <script src="script2.js"></script>
+         </head>
+         <body>
+            <script src="script3.js"></script>
+            <script src="script4.js"></script>
+         </body>
+      </html>
+   ```
+   In this case, the browser would first execute script1.js, then script2.js, then script3.js, and finally script4.js.
+- However, it's important to note that this is a very simple example, 
+   and in practice the execution order of scripts can be much more complex. 
+   For example, if one of the scripts depends on the results of another script, 
+   it may need to wait until the other script has finished executing before it can run. 
+   Additionally, some scripts may be executed asynchronously, which means that they will run in parallel with other scripts, 
+   rather than in a strict sequential order.
+
+---
+
+#### Layout and Painting
+
+- The terms "layout" and "painting" refer to two different stages in the process of rendering a web page in a browser.
+- The layout stage involves determining the size and position of each element on the page. 
+   This is necessary in order to ensure that the page is displayed correctly, 
+   with elements appearing in the correct place and with the correct dimensions.
+- The painting stage involves actually drawing the elements on the page. 
+   This involves filling in the content of each element (such as text or images) and applying any styles that have been specified, 
+   such as colors, fonts, or backgrounds.
+- Together, the layout and painting stages form the core of the rendering process in a web browser. 
+   This process can be computationally intensive, and so modern browsers use a variety of techniques to optimize the performance of layout and painting, 
+   such as caching, incremental rendering, and parallelization.
+   
+   ![Layout and Painting](https://i.stack.imgur.com/r2AIx.png)
+
+---
