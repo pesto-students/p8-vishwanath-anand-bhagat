@@ -22,4 +22,27 @@ aside{
     background-color: #f0f0f0;
     justify-content: space-around;
     height: 700px;
+    font-size: 13px;
 }
+
+footer{
+    background-color: #43689B;
+    display: grid;
+    grid-template-columns: 0.1fr 0.4fr 0.6fr;
+    padding: 15px;
+    grid-gap: 15px;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.small-logo{
+    width: 100%;
+}
+
+.music-controls{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
