@@ -35,7 +35,7 @@ footer{
     color: #ffffff;
 }
 
-.small-logo{
+.logo{
     width: 100%;
 }
 
@@ -44,5 +44,36 @@ footer{
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+section{
+    width: calc(100% - 30px);
+}
+
+.song-details{
+    display: grid;
+    grid-template-columns: 0.15fr 0.8fr;
+    padding: 65px;
+    grid-gap: 65px;
+    background-color: #454545;
+    color: #ffffff;
+}
+
+.song-name{
+    font-size: 35px;
+}
+
+.small-font{
+    font-size: 10px;
+}
+
+.song-details-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header-controls{
+    font-size: 10px;
 }
 
