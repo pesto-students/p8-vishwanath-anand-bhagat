@@ -1,6 +1,6 @@
 @font-face {
     font-family: lato;
-    src: url(./../fonts/Lato-Black.ttf);
+    src: url(./../fonts/Lato-Regular.ttf);
 }
 
 body{
@@ -21,7 +21,6 @@ aside{
     width: 30px;
     background-color: #f0f0f0;
     justify-content: space-around;
-    height: 700px;
     font-size: 13px;
 }
 
@@ -61,6 +60,7 @@ section{
 
 .song-name{
     font-size: 35px;
+    margin-top: 0;
 }
 
 .small-font{
@@ -77,3 +77,33 @@ section{
     font-size: 10px;
 }
 
+.song-list-container{
+    padding: 15px;
+}
+
+.song-lists{
+    font-size: 12px;
+    width: 100%;
+}
+
+.song-lists tr{
+    display: grid;
+    grid-template-columns: 0.4fr 0.4fr 0.4fr 0.4fr;
+}
+
+.song-lists tr:nth-child(even){
+    background-color: #F0F0F0;
+}
+
+
+.song-lists td{
+    padding: 20px;
+}
+
+.song-lists button{
+    border: 1px solid black;
+    font-size: 12px;
+    background-color: transparent;
+    cursor: pointer;
+    color: #3430E8;
+}
