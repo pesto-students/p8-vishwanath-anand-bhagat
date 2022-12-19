@@ -102,6 +102,21 @@
     ![Rendering engine basic flow](https://browserstack.wpenginepowered.com/wp-content/uploads/2019/11/Screenshot-2019-11-12-at-3.26.19-PM.png)
 - Every browser has its own unique rendering engine. So naturally, every browser has its own way of interpreting web pages on a user’s screen.
 - The primary job of a browser engine is to transform HTML documents and other resources of a web page into an interactive visual representation on a user's device.
+- Once the browser receives these files, it begins the process of rendering the page. This process involves several steps:
+   - Parsing the HTML: The browser starts by parsing the HTML file, which tells it how to structure the content on the page. 
+      As it parses the HTML, the browser creates a tree-like structure called the "DOM" (Document Object Model) to represent the content of the page.
+   - Applying styles with CSS: The browser then processes any linked CSS files, which specify the styling and layout of the page. 
+      It applies these styles to the elements in the DOM tree to determine how they should look on the page.
+   - Executing JavaScript: If the page includes any JavaScript, the browser will execute this code. 
+      JavaScript can manipulate the DOM, as well as interact with the user and make requests to servers.
+   - Layout and painting: After the DOM and CSS have been processed, the browser uses this information to determine the layout of the page, 
+      including the size and position of each element. It then "paints" each element onto the screen, 
+      starting with the background and working down to the text and other content.
+   - Final rendering: Once all the elements have been painted, the browser displays the fully rendered page to the user. 
+      If the page includes any dynamic content that can change over time (e.g., through user interaction or updates from the server), 
+      the browser will continue to monitor and update the page as needed.
+- This is a general overview of the rendering process in a browser. There are many factors that can affect the performance and speed of rendering, 
+   such as the size and complexity of the page, the hardware and software capabilities of the user's device, and the efficiency of the code.
 
 ---
 
