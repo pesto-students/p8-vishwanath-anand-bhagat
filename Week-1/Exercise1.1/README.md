@@ -155,22 +155,32 @@
 
 #### Tree Construction
 
-- The input to the tree construction stage is a sequence of tokens from the tokenization stage. 
-    The tree construction stage is associated with a DOM Document object when a parser is created. 
-    The "output" of this stage consists of dynamically modifying or extending that document's DOM tree.
-- This specification does not define when an interactive user agent has to render the Document so that it is available to the user, 
-    or when it has to begin accepting user input.
-- As each token is emitted from the tokenizer, the user agent must follow the appropriate steps from the following list:
-   - If there is no current node
-   - If the current node is an element in the HTML namespace
-   - If the current node is a MathML text integration point and the token is a start tag whose tag name is neither "mglyph" nor "malignmark"
-   - If the current node is an annotation-xml element in the MathML namespace and the token is a start tag whose tag name is "svg"
-   - If the current node is an HTML integration point and the token is a start tag
-   - If the current node is an HTML integration point and the token is a character token
-   - If the token is an end-of-file token  
-      Process the token according to the rules given in the section corresponding to the current insertion mode in HTML content.
-   - Otherwise  
-      Process the token according to the rules given in the section for parsing tokens in foreign content.
+- Tree construction in a browser refers to the process of creating a tree-like structure in memory that represents the content, 
+   style, and layout of a web page. There are two types of trees that are constructed in a browser: 
+   the Document Object Model (DOM) tree and the CSS Object Model (CSSOM) tree.
+- The DOM tree is a representation of the HTML structure of a web page. 
+   It consists of a hierarchy of nodes, each of which corresponds to an HTML element on the page. 
+   The root node of the DOM tree is the <html> element, and the other nodes are nested inside it according to the structure of the HTML. 
+   The DOM tree is used by the browser to render the page and handle events and user interactions.
+- The CSSOM tree is a representation of the CSS styles applied to a web page. 
+   It consists of a hierarchy of nodes that corresponds to the DOM tree, with each node representing an element on the page. 
+   The CSSOM tree includes information about the styles that are applied to each element, such as its font, color, and layout.
+- Both the DOM tree and the CSSOM tree are constructed as the browser parses the HTML and CSS files for a web page. 
+   The DOM tree is constructed as the browser parses the HTML, and the CSSOM tree is constructed as the browser parses the CSS. 
+   Once both trees are complete, the browser uses them to render the page on the user's device.
+- Here are the general steps involved in tree construction in a browser:
+   - The browser receives the HTML file for a web page from the web server.
+   - The browser begins parsing the HTML file, starting at the root element. 
+      As it encounters each element in the HTML, it creates a corresponding node in the DOM tree.
+   - The browser continues to parse the HTML and build the DOM tree until it reaches the end of the file.
+   - As it builds the DOM tree, the browser also associates each element with its corresponding CSS styles and JavaScript behaviors.
+   - Once the DOM tree is complete, the browser can begin rendering the page. 
+      It does this by laying out the elements on the page according to their position and size, and painting them with the appropriate colors and styles.
+   - The browser continues to render the page as the user scrolls and interacts with it. 
+      It may also need to make additional requests for resources such as images or additional data from the server.
+- This is a general overview of the tree construction process in a browser. 
+   The DOM tree is a dynamic structure that can be modified by JavaScript code, so it may change as the user interacts with the page.
+   ![Working of parser](https://www.researchgate.net/publication/336377602/figure/fig2/AS:812437553037313@1570711615245/The-construction-process-of-render-tree.png)
 
 ---
 
