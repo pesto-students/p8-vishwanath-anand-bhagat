@@ -122,19 +122,34 @@
 
 #### Script Processors
 
-- The script processor executes Javascript code to process an event. The processor uses a pure Go implementation of 
-    ECMAScript 5.1 and has no external dependencies. This can be useful in situations where one of the other processors 
-    doesn’t provide the functionality you need to filter events.
-- The processor can be configured by embedding Javascript in your configuration file or by pointing the processor at external file(s).
-   ```   
-      processors:
-        - script:
-            lang: javascript
-            source: >
-                function process(event) {
-                    event.Tag("js");
-                }
-   ```
+- In a web browser, a script processor is a component that is responsible for executing scripts, typically written in JavaScript. 
+   When a web page is loaded, the browser's script processor will parse and execute any JavaScript code contained in the page. 
+   This can include code that modifies the content or layout of the page, adds interactivity or functionality, 
+   or communicates with the server or other external sources.
+- The script processor is usually a part of the browser's rendering engine, which is responsible for parsing and 
+   rendering the content of the web page. The rendering engine will parse the HTML and CSS to construct the DOM and CSSOM trees, 
+   and then execute the JavaScript code using the script processor.
+- There are different script processors used by different browsers. For example, Google Chrome uses the V8 JavaScript engine as its script processor, 
+   while Mozilla Firefox uses the Spider Monkey engine. Each browser's script processor is optimized for performance and 
+   has its own set of features and capabilities.
+- Overall, the script processor plays a crucial role in the functioning of modern web applications and 
+   is an important part of the browser's rendering and execution process.
+- There are several factors that can affect the performance of the script processor, such as the size and complexity of the code, 
+   the hardware and software capabilities of the user's device, and the efficiency of the code. 
+   Developers can use tools and techniques to optimize their code and improve the performance of the script processor.
+- The process of script processing in a browser involves several steps, which can be summarized as follows:
+   - The browser encounters a script tag or external JavaScript file while parsing the HTML of a web page.
+   - The script is passed to the script processor for execution.
+   - The script processor begins by parsing the script and converting it into an abstract syntax tree (AST). 
+      An AST is a tree-like representation of the code that makes it easier for the processor to understand and execute.
+   - Next, the script processor converts the AST into machine code that can be executed by the computer's processor. 
+      This step is known as compiling or JIT compiling (just-in-time compiling).
+   - The script processor executes the machine code, which may make changes to the DOM or CSSOM trees and 
+      handle events and user interactions on the page.
+   - Once the script has finished executing, the script processor returns control to the browser. 
+      The browser continues to render the page, incorporating any changes made by the script.
+- This is a general overview of the process of script processing in a browser. 
+   The specific steps and technologies used may vary depending on the browser and the JavaScript runtime environment.
 
 ---
 
