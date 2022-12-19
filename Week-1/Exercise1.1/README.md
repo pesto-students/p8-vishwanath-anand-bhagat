@@ -180,7 +180,7 @@
       It may also need to make additional requests for resources such as images or additional data from the server.
 - This is a general overview of the tree construction process in a browser. 
    The DOM tree is a dynamic structure that can be modified by JavaScript code, so it may change as the user interacts with the page.
-   ![Working of parser](https://www.researchgate.net/publication/336377602/figure/fig2/AS:812437553037313@1570711615245/The-construction-process-of-render-tree.png)
+   ![Tree Construction](https://wpewebkit.org/assets/graphics-attachment.png)
 
 ---
 
