@@ -159,3 +159,34 @@ form button[type=submit]:hover{
     background-color: #45A29E;
     color: #fff;
 }
+
+@media only screen and (max-width: 600px) {
+    ul{
+        display: none;
+    }
+    .container{
+        width: 90%;
+        margin: 0;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    .input-container{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .input-container input, .input-container select, .input-container textarea{
+        padding: 7px;
+    }
+
+    .input-container label{
+        text-align: left;
+    }
+
+    .title-container h1{
+        font-size: 50px;
+    }
+}
