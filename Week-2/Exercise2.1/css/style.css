@@ -120,3 +120,42 @@ footer{
     background-color: #0B0C10;
     color: #66FCF1;
 }
+
+form{
+    width: 60%;
+    margin: auto;
+}
+
+.input-container{
+    display: grid;
+    grid-template-columns: 0.3fr 0.7fr;
+    grid-gap: 20px;
+    align-items: center;
+    margin: 15px 0;
+}
+.input-container label{
+    text-align: right;
+}
+
+.input-container input, .input-container select, .input-container textarea{
+    padding: 10px;
+}
+
+.button-container{
+    text-align: center;
+}
+
+form button[type=submit]{
+    background-color: #66FCF1;
+    padding: 10px 15px;
+    border: none;
+    margin: auto;
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+    color: #202833;
+}
+
+form button[type=submit]:hover{
+    background-color: #45A29E;
+    color: #fff;
+}
