@@ -19,6 +19,7 @@ body{
     height: 100%;
     width: 100%;
     transition: transform 0.5s;
+    z-index: 2;
 }
 
 .color-box:first-child {
@@ -59,4 +60,14 @@ body{
 .box-container:hover > .color-box:nth-child(4) {
     transform-origin: 100% 100%;
     transform: rotate(90deg);
+}
+
+.text-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
