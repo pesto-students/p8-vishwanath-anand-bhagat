@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    color: #0E1111;
+    background-color: #C2B9B0;
+}
+
+.header{
+    background-color: #C2C9CF;
+}
+
+.header .container{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+}
+
+.container{
+    padding: 15px;
+    width: 80%;
+    margin: auto;
+}
+
+.header .title{
+    margin: 0;
+    display:flex;
+    align-items: center;
+}
+
+.header nav{
+    display: flex;
+    justify-content: end;
+}
+
+.header nav ul{
+    list-style-type: none;
+    margin: 0;
+}
+
+.header nav ul li{
+    display: table-cell;
+    padding: 20px;
+}
+
+a{
+    text-decoration: none;
+    transition: color 0.5s;
+    font-weight: bold;
+    color: #0E1111;
+}
+
+.header nav ul li a:hover{
+    color: 15px;
+    color: #E7717D;
+}
