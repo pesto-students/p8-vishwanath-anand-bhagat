@@ -175,7 +175,7 @@ form button[type=submit]:hover{
 
     .input-container{
         grid-template-columns: 1fr;
-        gap: 0;
+        grid-gap: 0;
     }
 
     .input-container input, .input-container select, .input-container textarea{
@@ -188,5 +188,13 @@ form button[type=submit]:hover{
 
     .title-container h1{
         font-size: 50px;
+    }
+
+    .blog-content{
+        grid-template-columns: 1fr;
+    }
+
+    .blog-list{
+        grid-template-columns: 1fr;
     }
 }
