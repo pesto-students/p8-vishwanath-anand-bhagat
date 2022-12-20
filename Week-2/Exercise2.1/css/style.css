@@ -1,11 +1,11 @@
 body{
     margin: 0;
     color: #0E1111;
-    background-color: #C2B9B0;
 }
 
 .header{
-    background-color: #C2C9CF;
+    background-color: #1F2833;
+    color: #66FCF1;
 }
 
 .header .container{
@@ -44,10 +44,71 @@ a{
     text-decoration: none;
     transition: color 0.5s;
     font-weight: bold;
-    color: #0E1111;
+    color: #66FCF1;
 }
 
-.header nav ul li a:hover{
-    color: 15px;
-    color: #E7717D;
+a:hover, a.active{
+    color: #45A29E;
+    text-decoration: underline;
+}
+
+.title-container{
+    text-align: center;
+    font-size: 40px;
+    padding: 50px;
+}
+
+.title-container h1{
+    width: fit-content;
+    margin: auto;
+    color: #66FCF1;
+    text-shadow: 2px 2px #0B0C10;
+}
+
+.blog-content{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-gap: 20px;
+}
+
+.blog-content div{
+    padding: 20px;
+}
+
+.image-container{
+    display: flex;
+    align-items: center;
+}
+
+.blog-content div img{
+    width: 100%;
+}
+
+.blog-content p{
+    text-align: justify;
+}
+
+.blog-list{
+    display: grid;
+    grid-template-columns: 0.33fr 0.33fr 0.33fr;
+    grid-gap: 20px;;
+}
+
+.article{
+    border-radius: 20px;
+    background-color: #C5C6C7;
+}
+
+.article-info{
+    padding: 20px;
+}
+
+.article-info h3{
+    margin-top: 0;
+    text-shadow: 1px 1px #0B0C10;
+}
+
+.article img{
+    width: 100%;
+    border-radius: 20px 20px 0 0;
 }
