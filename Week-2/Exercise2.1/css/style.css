@@ -161,9 +161,6 @@ form button[type=submit]:hover{
 }
 
 @media only screen and (max-width: 600px) {
-    ul{
-        display: none;
-    }
     .container{
         width: 90%;
         margin: 0;
@@ -196,5 +193,50 @@ form button[type=submit]:hover{
 
     .blog-list{
         grid-template-columns: 1fr;
+    }
+}
+
+#navigation_toggle{
+    display: none;
+} 
+    
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+    
+@media (max-width: 600px) {
+    
+    .menu { 
+        display:none;
+        position: absolute;
+        background-color: #1F2833;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+    }
+    
+    .menu li:hover {
+        display: inline-block;
+        background-color:#4c9e9e;
+        transition: 0.3s ease;
+    }
+
+    .header nav ul li{
+        display: block;
+    }
+    
+    .menu li + li {
+        margin-top: 12px;
+    }
+    
+    #navigation_toggle:checked ~ .menu{
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
     }
 }
