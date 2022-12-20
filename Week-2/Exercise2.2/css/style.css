@@ -1,0 +1,37 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.box-container{
+    width: 200px;
+    height: 200px;
+    grid-template-columns: 0.5fr 0.5fr;
+    display: grid;
+    position: relative;
+}
+
+.color-box{
+    height: 100%;
+    width: 100%;
+}
+
+.color-box:first-child {
+    background-color: red;
+}
+
+.color-box:nth-child(2) {
+    background-color: yellow;
+}
+
+.color-box:nth-child(3) {
+    background-color: blue;
+}
+
+.color-box:nth-child(4) {
+    background-color: green;
+}
