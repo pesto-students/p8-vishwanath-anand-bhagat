@@ -18,20 +18,45 @@ body{
 .color-box{
     height: 100%;
     width: 100%;
+    transition: transform 0.5s;
 }
 
 .color-box:first-child {
     background-color: red;
+    transform-origin: 0% 0%;
 }
 
 .color-box:nth-child(2) {
     background-color: yellow;
+    transform-origin: 100% 0%;
 }
 
 .color-box:nth-child(3) {
     background-color: blue;
+    transform-origin: 0% 100%;
 }
 
 .color-box:nth-child(4) {
     background-color: green;
+    transform-origin: 100% 100%;
+}
+
+.box-container:hover > .color-box:first-child {
+    transform-origin: 0% 0%;
+    transform: rotate(90deg);
+}
+
+.box-container:hover > .color-box:nth-child(2) {
+    transform-origin: 100% 0%;
+    transform: rotate(-90deg);
+}
+
+.box-container:hover > .color-box:nth-child(3) {
+    transform-origin: 0% 100%;
+    transform: rotate(-90deg);
+}
+
+.box-container:hover > .color-box:nth-child(4) {
+    transform-origin: 100% 100%;
+    transform: rotate(90deg);
 }
