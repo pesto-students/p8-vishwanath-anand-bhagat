@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <title>Blogs | Exercise 2.1</title>
+        <meta name="description" content="This is the description of the page">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <div class="header">
+            <div class="container">
+                <h1 class="title">
+                    <a href="./index.html">Blogs</a>
+                </h1>
+                <nav>
+                    <ul>
+                        <input type="checkbox" id="navigation_toggle" />
+                        <label for="navigation_toggle" class="hamburger">&#9776;</label>
+                        <div class="menu">
+                            <li>
+                                <a href="./index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="./blog1.html">Blog 1</a>
+                            </li>
+                            <li>
+                                <a href="./blog2.html">Blog 2</a>
+                            </li>
+                            <li>
+                                <a href="./blog3.html">Blog 3</a>
+                            </li>
+                            <li>
+                                <a href="./contactus.html"  class="active">Contact Us</a>
+                            </li>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <section class="title-container">
+            <h1>Contact Us</h1>
+        </section>
+
+        <section class="container">
+           <form>
+                <div class="input-container">
+                    <label for="title">Title</label>
+                    <div>
+                        <input type="radio" id="title" name="title" value="mr" required> Mr.
+                        <input type="radio" id="title" name="title" value="mrs" required> Mrs.
+                        <input type="radio" id="title" name="title" value="miss" required> Miss
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-container">
+                    <label for="mobile">Mobile</label>
+                    <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile number" required pattern="[1-9]{1}[0-9]{9}" title="Enter a valid 10 digit number">
+                </div>
+
+                <div class="input-container">
+                    <label for="country">Country</label>
+                    <select id="country" name="country" required>
+                        <option value="" selected readonly disabled>Select Option</option>
+                        <option value="india">India</option>
+                        <option value="other">Other Country</option>
+                    </select>
+                </div>
+
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="8">
+                </div>
+
+                <div class="input-container">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Enter your password to confirm" required minlength="8">
+                </div>
+
+                <div class="input-container">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Enter your message here" rows="10" required></textarea>
+                </div>
+
+                <div class="input-container">
+                    <div></div>
+                    <div>
+                        <input type="checkbox" id="agree_terms" name="agree_terms" required>
+                        <label for="agree_terms">I agree to the terms and conditions</label>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button type="submit">Submit</button>
+                </div>
+           </form>
+        </section>
+
+        <footer>
+            <h3>Design and Developed by Anand Bhagat. All Rights Reserved &#169; 2019.</h3>
+        </footer>
+    </body>
+</html>
