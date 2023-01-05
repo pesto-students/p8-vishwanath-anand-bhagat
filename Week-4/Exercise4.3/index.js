@@ -1,21 +1,26 @@
-function fibonacci(num){
-    var result = 0; 
-    var first = 0;
-    var second = 1;
-    console.log("The Fibonacci Series is:");
-    for(var i = 0; i < num; i++){
-        if(i <= 1){
-            result=i;
-        }else{
-            result = first + second;
-            first = second;
-            second = result;
+const fibonacci = (num) => ({
+    [Symbol.iterator]: () => {
+        let first = 0;
+        let second = 0;
+        let i = 0;
+
+        return {
+            next: () => {
+                if(i++ <= num){
+                    [first, second] = [second, (first + second) || 1]; // this line means first = second. and second = (old value of first) + second;
+                    return { value: first, done: false}
+                }else{
+                    return { done: true}
+                }
+            }
         }
-        console.log(result);
     }
+});
+
+for(let result of fibonacci(6)){
+    console.log(result);
 }
 
-fibonacci(7);
 //OUTPUT
 // 0
 // 1
