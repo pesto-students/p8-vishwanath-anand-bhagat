@@ -1,48 +1,65 @@
 
-
-
-function getNumber(){
-    return Math.floor(Math.random() * 10) + 1; //generates number between 1 to 10
+class MyPromise {
+    constructor(executor) {
+        this.successCallbacks = [];
+        this.errorCallbacks = [];
+        this.finallyCallbacks = [];
+    
+        executor((error, message) => {
+            if (error) {
+                this.errorCallbacks.forEach(cb => cb(message));
+            } else {
+                this.successCallbacks.forEach(cb => cb(message));
+            }
+            this.finallyCallbacks.forEach(cb => cb());
+        });
+    }
+  
+    then(successCb) {
+        this.successCallbacks.push(successCb);
+        return this;
+    }
+  
+    catch(errorCb) {
+        this.errorCallbacks.push(errorCb);
+        return this;
+    }
+  
+    finally(finallyCb) {
+        this.finallyCallbacks.push(finallyCb);
+        return this;
+    }
 }
 
-const checkNumber = (num, wait_time) => new Promise((resolve, reject) => {
+function getNumber(executor, wait_time){
+    let num = Math.floor(Math.random() * 10) + 1; //generates number between 1 to 10
+
     setTimeout(() => {
         if(num%5 === 0){
-            reject();
+            return executor(true, `Promise is rejected for number ${num}`);
         }
-        resolve();
+        return executor(false, `Promise is resolved for number ${num}`);
     }, wait_time);
-});
-
-function callCheckNumber(num){
-    checkNumber(num, 300).then(() => {
-        console.log(`${num} promise is resolved`);
-    }).catch(() => {
-        console.log(`${num} promise is rejected`);
-    }).finally(() => {
-        console.log(`${num} promise is completed`);
-    });
 }
 
-callCheckNumber(getNumber());
-callCheckNumber(getNumber());
-callCheckNumber(getNumber());
-callCheckNumber(getNumber());
-callCheckNumber(getNumber());
-callCheckNumber(getNumber());
+const promise = new MyPromise((executor) => getNumber(executor, 100));
+
+promise
+.then(result => {
+    console.log(result);
+})
+.catch(error => {
+    console.log(error);
+})
+.finally(() => {
+    console.log(`Promise is completed`);
+});
+
 
 //SAMPLE OUTPUT
-// 10 promise is rejected
-// 10 promise is completed
-// 3 promise is resolved
-// 3 promise is completed
-// 4 promise is resolved
-// 4 promise is completed
-// 8 promise is resolved
-// 8 promise is completed
-// 8 promise is resolved
-// 8 promise is completed
-// 3 promise is resolved
-// 3 promise is completed
+// Promise is resolved for number 4
+// Promise is completed
+// Promise is rejected for number 10
+// Promise is completed
 
 
