@@ -1,0 +1,109 @@
+@font-face {
+    font-family: lato;
+    src: url(./../fonts/Lato-Regular.ttf);
+}
+
+body{
+    font-family: lato;
+    padding: 0;
+    margin: 0;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30px;
+    background-color: #f0f0f0;
+    justify-content: space-around;
+    font-size: 13px;
+}
+
+footer{
+    background-color: #43689B;
+    display: grid;
+    grid-template-columns: 0.1fr 0.4fr 0.6fr;
+    padding: 15px;
+    grid-gap: 15px;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.logo{
+    width: 100%;
+}
+
+.music-controls{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section{
+    width: calc(100% - 30px);
+}
+
+.song-details{
+    display: grid;
+    grid-template-columns: 0.15fr 0.8fr;
+    padding: 65px;
+    grid-gap: 65px;
+    background-color: #454545;
+    color: #ffffff;
+}
+
+.song-name{
+    font-size: 35px;
+    margin-top: 0;
+}
+
+.small-font{
+    font-size: 10px;
+}
+
+.song-details-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header-controls{
+    font-size: 10px;
+}
+
+.song-list-container{
+    padding: 15px;
+}
+
+.song-lists{
+    font-size: 12px;
+    width: 100%;
+}
+
+.song-lists tr{
+    display: grid;
+    grid-template-columns: 0.4fr 0.4fr 0.4fr 0.4fr;
+}
+
+.song-lists tr:nth-child(even){
+    background-color: #F0F0F0;
+}
+
+
+.song-lists td{
+    padding: 20px;
+}
+
+.song-lists button{
+    border: 1px solid black;
+    font-size: 12px;
+    background-color: transparent;
+    cursor: pointer;
+    color: #3430E8;
+}
