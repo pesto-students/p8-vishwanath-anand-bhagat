@@ -22,8 +22,9 @@ console.log(sum([0,0,0], 1));
 
 //time complexity
 //O(n^3) 
+// where n is the length of numbers array
 //we are running the for loop thrice, and the loop depends on the lenth of numbers array
 
 //space complexity
-//constant
+//O(1)
 //its because we are only using constant variables in the function(index variables i,j,k and closest) and there length is not dependend on the numbers array length
