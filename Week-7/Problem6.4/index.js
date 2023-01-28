@@ -25,10 +25,11 @@ console.log(getMaximumProfit([2,4,1]));
 
 //time complexity
 //O(n) 
+//where n is the length of prices array
 //we are running the for loop only once, and the loop depends on the lenth of prices array
 
 //space complexity
-//constant
+//O(1)
 //its because we are only using constant variables in the function(max_profit and min_price) and there length is not dependend on the prices array length
 
 
