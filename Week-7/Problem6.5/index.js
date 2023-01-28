@@ -23,8 +23,9 @@ console.log(checkIfPairExists([-1, 20], 30));
 
 //time complexity
 //O(n^2) 
+// where n is the lenth of numbers array
 //we are running the for loop twice, and the loop depends on the lenth of numbers array
 
 //space complexity
-//constant
+//O(1)
 //its because we are only using constant variables in the function(index variables i and j) and there length is not dependend on the numbers array length
