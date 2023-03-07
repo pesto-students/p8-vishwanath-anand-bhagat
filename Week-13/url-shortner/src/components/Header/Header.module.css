@@ -1,0 +1,12 @@
+.main{
+    color: #2F2F2F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 10px black;
+    z-index: 10;
+}
+
+.container{
+    width: 80%;
+}
