@@ -2,18 +2,67 @@ import React, { useState } from 'react';
 import styles from './MainContent.module.css';
 
 const MainContent = () => {
-	const [shortenLinks, setShortenLinks] = useState([  {    "id": 0,    "link": "https://www.google.com/",    "shorten_link": "https://shorten.link/ab12cd"  },  {    "id": 1,    "link": "https://www.facebook.com/",    "shorten_link": "https://shorten.link/ef34gh"  },  {    "id": 2,    "link": "https://www.twitter.com/",    "shorten_link": "https://shorten.link/ij56kl"  },  {    "id": 3,    "link": "https://www.youtube.com/",    "shorten_link": "https://shorten.link/mn78op"  },  {    "id": 4,    "link": "https://www.instagram.com/",    "shorten_link": "https://shorten.link/qr90st"  },  {    "id": 5,    "link": "https://www.github.com/",    "shorten_link": "https://shorten.link/uv12wx"  },  {    "id": 6,    "link": "https://www.linkedin.com/",    "shorten_link": "https://shorten.link/yz34ab"  },  {    "id": 7,    "link": "https://www.medium.com/",    "shorten_link": "https://shorten.link/cd56ef"  },  {    "id": 8,    "link": "https://www.stackoverflow.com/",    "shorten_link": "https://shorten.link/gh78ij"  },  {    "id": 9,    "link": "https://www.amazon.com/",    "shorten_link": "https://shorten.link/kl90mn"  }]
-	);
+	const [shortenLinks, setShortenLinks] = useState([{    
+		"id": 0,    
+		"link": "https://chat.openai.com/chat",    
+		"shorten_link": "https://shrtco.de/MIoV82"  
+	}]);
+	const [error, setError] = useState("");
+	const [url, setUrl] = useState("");
+	const [loading, setLoading] = useState(false);
+
+	const getShortenLink = () => {
+		setError("");
+		if(url){
+			setLoading(true);
+			fetch(`https://api.shrtco.de/v2/shorten?url=${url}`)
+			.then((res) => res.json())
+			.then((data) => {
+				if(data.ok){
+					setShortenLinks((prev) => {
+						return [
+							...prev,
+							{
+								id: prev.length,
+								link: url,
+								shorten_link: data.result.full_short_link,
+							}
+						]
+					});
+					setUrl("");
+				}else{
+					if(data.rate){
+						setError(data.text);
+					}else{
+						setError(data.error);
+					}
+				}
+			}).catch((data) =>{
+				if(data.rate){
+					setError(data.text);
+				}else{
+					setError(data.error);
+				}
+				alert("Something went wrong.");
+			}).finally((data) => {
+				setLoading(false);
+			});
+		}else{
+			setError("Please enter a link.");
+		}
+	}
+
     return (
         <div className={styles.main}>
 			<div className={styles.container}>
 				<div className={styles.card}>
 					<div className={styles.input_container}>
 						<div>
-							<input className={styles.input} placeholder="Enter a link to shorten" />
+							<input className={styles.input} placeholder="Enter a link to shorten" value={url} onChange={(e) => {setUrl(e.target.value)}} />
+							<p style={{ color: 'red', margin: 0 }}>{error}</p>
 						</div>
 						<div>
-							<button className={styles.button} >Shorten It</button>
+							<button className={styles.button} onClick={(e) => {getShortenLink()}}>Shorten It</button>
 						</div>
 					</div>
 				</div>
@@ -29,13 +78,20 @@ const MainContent = () => {
 									{item.shorten_link}
 								</div>
 								<div className={styles.copy_button_container}>
-									<button className={styles.copy_button}>Copy</button>
+									<button className={styles.copy_button} onClick={() => {navigator.clipboard.writeText(item.shorten_link); alert('Link Copied Successfully.')}}>Copy</button>
 								</div>
 							</div>
 						);
 					})}
 				</div>
 			</div>
+			{
+				loading && (
+				<div className={styles.loader_backdrop}>
+					<div className={styles.loader}></div>
+				</div>
+			)}
+			
 		</div>
     )
 }
