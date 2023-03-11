@@ -1,0 +1,36 @@
+.main{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.todoContainer{
+    display: grid;
+    grid-template-columns: 0.1fr 0.8fr 0.1fr;
+    width: 100%;
+    padding: 20px 0;
+    border: 1px solid black;
+    margin: 20px 0;
+}
+
+.checkbox{
+    padding: 5px;
+    margin: auto;
+}
+
+.deleteIcon{
+    color: #FF6B6B;
+    cursor: pointer;
+}
+
+.todosContainer{
+    width: 60%;
+}
+
+.textCenter{
+    text-align: center;
+}
+
+.checked{
+    text-decoration: line-through;
+}
