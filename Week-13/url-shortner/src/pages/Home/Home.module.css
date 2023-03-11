@@ -67,6 +67,9 @@
 
 .link{
     padding: 15px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .shorten_link{
