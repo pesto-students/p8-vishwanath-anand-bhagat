@@ -1,0 +1,39 @@
+.App {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	padding: 30px;
+}
+
+.heading{
+	margin: 0;
+	font-weight: normal;
+}
+
+.add_step_btn{
+	background-color: #663797;
+	padding: 15px;
+	color: #ffffff;
+	border: none;
+	outline: none;
+	width: 300px;
+	font-size: 15px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.reset_steps_btn{
+	background-color: #DEDEDE;
+	padding: 15px;
+	border: none;
+	outline: none;
+	width: 300px;
+	font-size: 15px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+
+
+
