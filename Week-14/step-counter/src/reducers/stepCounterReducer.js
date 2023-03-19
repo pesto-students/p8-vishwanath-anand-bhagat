@@ -18,7 +18,6 @@ const resetSteps = (state) => {
 
   
 const stepCounterReducer = (state = initialState, action) => {
-	console.log(action);
 	const actionHandlers = {
 		addStep: () => addStep(state),
 		resetSteps: () => resetSteps(state),
