@@ -1,0 +1,38 @@
+.main{
+    background-color: #e4e4e4;
+    min-height: calc(100vh - 124.81px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    width: 65%;
+}
+
+.card{
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgb(138, 138, 138);
+    padding: 10px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    width: 50%;
+    text-align: center;
+}
+
+.input{
+    width: calc(100% - 23px);
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.button{
+    border-radius: 10px;
+    background-color: #2BCFCE;
+    color: #ffffff;
+    padding: 10px 20px;
+    outline: 0px;
+    border: 0px;
+    width: 100%;
+    cursor: pointer;
+}
