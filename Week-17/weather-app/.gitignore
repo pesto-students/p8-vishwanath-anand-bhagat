@@ -1,0 +1,36 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore logs, backups and other temporary files
+*.log
+*.log.*
+*.backup
+*.bak
+*.swp
+*.tmp
+*.pid
+*.map
+*.csv
+*.sqlite
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore configuration files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore npm-debug.log and yarn-error.log files
+npm-debug.log*
+yarn-error.log*
+
+# Ignore coverage reports
+coverage
+
+# Ignore build directories
+build/
+dist/
