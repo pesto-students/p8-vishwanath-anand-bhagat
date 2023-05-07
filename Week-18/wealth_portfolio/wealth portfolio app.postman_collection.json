@@ -1,0 +1,1016 @@
+{
+	"info": {
+		"_postman_id": "81fc45bd-fccf-4e38-909e-475a0a84b2e5",
+		"name": "pesto wealth portfolio app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9509141"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user1@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"name\": \"User 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user1@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Assets",
+			"item": [
+				{
+					"name": "create asset",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"aaaa\",\r\n    \"date\": \"2020-08-12\",\r\n    \"amount\": \"3000.56\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/asset/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"asset",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get assets",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/asset/?startdate=2020-08-14&enddate=2020-08-15",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"asset",
+								""
+							],
+							"query": [
+								{
+									"key": "startdate",
+									"value": "2020-08-14"
+								},
+								{
+									"key": "enddate",
+									"value": "2020-08-15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get asset",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/asset/645325548b1a00472b06b7cd",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"asset",
+								"645325548b1a00472b06b7cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete asset",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/asset/6453197e5a49bfdc33c21a44",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"asset",
+								"6453197e5a49bfdc33c21a44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update asset",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"eeeeeeeeee\",\r\n    \"date\": \"2020-08-30\",\r\n    \"amount\": \"250.56\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/asset/6453231aeae9176a71b4f1b5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"asset",
+								"6453231aeae9176a71b4f1b5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoices",
+			"item": [
+				{
+					"name": "create invoice",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "aaaaa",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2022-08-20",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "3000",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Anand/Downloads/perfect demo patient/3/3xcloseup/vertex.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/invoice",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"invoice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get invoice",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"aaaa\",\r\n    \"date\": \"2020-08-12\",\r\n    \"amount\": \"3000.56\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/invoice/6456834cc1f9bb07621d1bfd",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"invoice",
+								"6456834cc1f9bb07621d1bfd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete invoice",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/invoice/6453197e5a49bfdc33c21a44",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"invoice",
+								"6453197e5a49bfdc33c21a44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get invoice file",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/invoice/6456834cc1f9bb07621d1bfd/file",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"invoice",
+								"6456834cc1f9bb07621d1bfd",
+								"file"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Funds",
+			"item": [
+				{
+					"name": "create fund",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"aaaa\",\r\n    \"date\": \"2020-08-12\",\r\n    \"amount\": \"3000.56\",\r\n    \"type\": \"income\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/fund/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fund",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get funds",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/fund/?startdate=2020-08-12&enddate=2020-08-15",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fund",
+								""
+							],
+							"query": [
+								{
+									"key": "startdate",
+									"value": "2020-08-12"
+								},
+								{
+									"key": "enddate",
+									"value": "2020-08-15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get fund",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/fund/6455dee23139a50612ba9a21",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fund",
+								"6455dee23139a50612ba9a21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete fund",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/fund/6455df413139a50612ba9a3b",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fund",
+								"6455df413139a50612ba9a3b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update fund",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"eeeeeeeeee\",\r\n    \"date\": \"2020-08-30\",\r\n    \"amount\": \"250.56\",\r\n    \"type\": \"expense\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/fund/6455df413139a50612ba9a3b",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fund",
+								"6455df413139a50612ba9a3b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fixed Income",
+			"item": [
+				{
+					"name": "create fixed income",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"aaaa\",\r\n    \"date\": \"2020-08-12\",\r\n    \"amount\": \"3000.56\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/fixed_income/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fixed_income",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get fixed income",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/fixed_income/?startdate=2020-08-12&enddate=2020-08-15",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fixed_income",
+								""
+							],
+							"query": [
+								{
+									"key": "startdate",
+									"value": "2020-08-12"
+								},
+								{
+									"key": "enddate",
+									"value": "2020-08-15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get fixed income",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/fixed_income/6455dae6a7aeb586e207c019",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fixed_income",
+								"6455dae6a7aeb586e207c019"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete fixed income",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/fixed_income/6455dabaa7aeb586e207c007",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fixed_income",
+								"6455dabaa7aeb586e207c007"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update fixed income",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/fixed_income/6455dae6a7aeb586e207c019",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fixed_income",
+								"6455dae6a7aeb586e207c019"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Equities",
+			"item": [
+				{
+					"name": "create equity",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"aaaa\",\r\n    \"date\": \"2020-08-12\",\r\n    \"amount\": \"3000.56\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/equity/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equity",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get equities",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/equity/?startdate=2020-08-12&enddate=2020-08-13",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equity",
+								""
+							],
+							"query": [
+								{
+									"key": "startdate",
+									"value": "2020-08-12"
+								},
+								{
+									"key": "enddate",
+									"value": "2020-08-13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get equity",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/equity/6455d7c45b979db0451c5a47",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equity",
+								"6455d7c45b979db0451c5a47"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete equity",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/equity/6455d7c45b979db0451c5a47",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equity",
+								"6455d7c45b979db0451c5a47"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update equity",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/equity/6455d7c45b979db0451c5a47",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equity",
+								"6455d7c45b979db0451c5a47"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDUzMTEzODdkMmIwMjEwZjFmZjdiMmEiLCJpYXQiOjE2ODMxNjk4MjF9.Y87S1w7lGVaf6oB_uBESDPyB-Jm5PfKj6XgwkVLVDcQ",
+			"type": "string"
+		}
+	]
+}
